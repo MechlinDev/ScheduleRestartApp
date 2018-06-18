@@ -30,8 +30,6 @@
         {
             this.Title = new System.Windows.Forms.Label();
             this.LblDescription = new System.Windows.Forms.Label();
-            this.lblDomain = new System.Windows.Forms.Label();
-            this.txtDomain = new System.Windows.Forms.TextBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
@@ -61,29 +59,11 @@
             this.LblDescription.TabIndex = 2;
             this.LblDescription.Text = "To set Auto Logon and create restart task, privide domain username and password.";
             // 
-            // lblDomain
-            // 
-            this.lblDomain.AutoSize = true;
-            this.lblDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomain.Location = new System.Drawing.Point(41, 84);
-            this.lblDomain.Name = "lblDomain";
-            this.lblDomain.Size = new System.Drawing.Size(42, 14);
-            this.lblDomain.TabIndex = 3;
-            this.lblDomain.Text = "Domain";
-            // 
-            // txtDomain
-            // 
-            this.txtDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomain.Location = new System.Drawing.Point(172, 84);
-            this.txtDomain.Name = "txtDomain";
-            this.txtDomain.Size = new System.Drawing.Size(248, 20);
-            this.txtDomain.TabIndex = 4;
-            // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(41, 124);
+            this.lblUser.Location = new System.Drawing.Point(42, 117);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(56, 14);
             this.lblUser.TabIndex = 5;
@@ -92,7 +72,7 @@
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(172, 124);
+            this.txtUser.Location = new System.Drawing.Point(172, 111);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(248, 20);
             this.txtUser.TabIndex = 6;
@@ -120,16 +100,17 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(227, 214);
+            this.btnSubmit.Location = new System.Drawing.Point(227, 217);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(99, 23);
             this.btnSubmit.TabIndex = 9;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "Enable";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
@@ -139,8 +120,6 @@
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.txtDomain);
-            this.Controls.Add(this.lblDomain);
             this.Controls.Add(this.LblDescription);
             this.Controls.Add(this.Title);
             this.Name = "Form1";
@@ -154,8 +133,6 @@
         #endregion
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label LblDescription;
-        private System.Windows.Forms.Label lblDomain;
-        private System.Windows.Forms.TextBox txtDomain;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label lblPass;
