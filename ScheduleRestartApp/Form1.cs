@@ -50,6 +50,10 @@ namespace ScheduleRestartApp
                 var key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
                 //txtDomain.Text = (string)(key.OpenSubKey(RegistryLocation, RegistryKeyPermissionCheck.ReadWriteSubTree)).GetValue("DefaultDomainName");
                 txtUser.Text = (string)(key.OpenSubKey(RegistryLocation, RegistryKeyPermissionCheck.ReadWriteSubTree)).GetValue("DefaultUserName");
+                if (txtUser.Text == string.Empty)
+                {
+                        txtUser.Text = (string)(key.OpenSubKey(RegistryLocation, RegistryKeyPermissionCheck.ReadWriteSubTree)).GetValue("LastUsedUsername");
+                }
                 Application.DoEvents();
                 string IsEnabled = (string)(key.OpenSubKey(RegistryLocation, RegistryKeyPermissionCheck.ReadWriteSubTree)).GetValue("AutoAdminLogon");
                 key.Close();
